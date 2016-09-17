@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Fade Out</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+	<style type="text/css">
+		#hidden-text {
+			display:none;
+		}
+
+	</style>
+
+</head>
+<body>
+	<p id="fadeOut-text"> This is an text which will fade </p>
+	<p id="hidden-text">This is an hidden text </p>
+	<button id="fadeOut">FadeOut</button>
+	<button id="fadeIn">FadeIn</button>
+
+	<script type="text/javascript">
+		$("#fadeOut").click(function(){
+
+			$("#fadeOut-text").fadeOut("slow");
+
+
+		});
+
+		$("#fadeIn").click(function(){
+			$("#hidden-text").fadeIn("slow");
+
+			$("#hidden-text").html("This is an text which is fadeIn");
+
+
+
+
+		});
+	
+	</script>
+
+</body>
+</html>

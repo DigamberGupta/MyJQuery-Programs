@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sortable</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+	<link href="jquery-ui-1.12.0/jquery-ui.css" rel="stylesheet">
+	<script src="jquery-ui-1.12.0/jquery-ui.js"></script>
+
+	<style type="text/css">
+		body{
+			background-color: black;
+			
+		}
+		#friends-list {
+			list-style-type: none;
+			color: orange;
+			font-size: 20px;
+			font-family: sans-serif;
+			font-weight: bold;
+		}
+		li {
+			margin-top:10px;
+			padding-left: 3em;
+			padding-top: 5px;
+			padding-bottom: 5px;
+
+		}
+		.list-border{
+			border :1px solid #160356;
+			width: 40%;
+
+		}
+		#list-heading {
+			margin-left: 200px !important ; 
+			color: white;
+			font-size: 20px;
+			font-family: sans-serif;
+			font-weight: bold;
+		}
+	</style>
+
+</head>
+<body>
+<p id="list-heading">List of Friends :- </p>
+<center><ul id="friends-list"> 
+	<li class="list-border">Lokesh Jadhav</li>
+	<li class="list-border">Vishal Singh </li>
+	<li class="list-border">Ankit Chaurasia</li>
+	<li class="list-border">Kaustubh Bonde</li>
+	<li class="list-border"> Sonu Varma </li>
+	<li class="list-border"> Dhiraj Khanojia </li>
+	<li class="list-border"> Sameer Ambade </li>
+
+</ul></center>
+
+<script type="text/javascript">
+	$("#friends-list").sortable();
+	
+</script>
+
+</body>
+</html>

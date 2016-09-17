@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Animation content</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+	<style type="text/css">
+		div{
+			margin: 0 auto;
+		}
+
+		body {
+			background-color: black;
+		}
+		
+		.circle {
+			width:150px;
+			height: 150px;
+			border-radius: 50%;
+			background-color: green;
+
+		}
+
+		#heading{
+			font-family: sans-serif;
+			color:white;
+			font-size: 20px;
+		}
+	</style>
+
+</head>
+<body>
+<p id="heading"> Click the cirlce to see the animation </p>
+<div id="circle-div" class="circle"></div>
+
+<script type="text/javascript"> 
+
+$("#circle-div").click(function(){
+
+	$(this).animate({
+		width:"300px",
+		height:"300px",
+		marginTop:"100px",
+		marginLeft:"100px"
+	}, 2000 , function(){
+		$(this).css("background-color","red");
+	});
+});
+</script>
+
+</body>
+</html>

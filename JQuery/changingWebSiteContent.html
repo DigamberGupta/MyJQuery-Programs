@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Changing Website Content</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+	<style type="text/css">
+		.common {
+
+			width:100px;
+			height:100px ;
+			margin:10px;
+			
+
+		}
+		#circle{
+			background-color: yellow;
+			border-radius: 50%;
+		}
+		#cnn-iframe {
+			width:500px;
+			height: 300px;
+		}
+		#paragraph-text {
+			font-size: 40px;
+		}
+
+	</style>
+</head>
+<body>
+
+<iframe src="http://edition.cnn.com/" id="cnn-iframe"></iframe>
+	<div class="common " id="circle"> </div>
+	<p id="paragraph-text"> Was ist die Farbe? </p>
+
+	<script type="text/javascript">
+		$("#circle").hover(function(){
+
+			$("p").html("Gelb");
+		});
+
+
+		$("iframe").hover(function(){
+
+			$("iframe").attr("src","http://www.bbc.com/");
+			$("p").html("bbc.com");
+		});
+
+
+	</script>
+
+</body>
+</html>

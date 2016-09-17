@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Droppable</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+	<link href="jquery-ui-1.12.0/jquery-ui.css" rel="stylesheet">
+	<script src="jquery-ui-1.12.0/jquery-ui.js"></script>
+
+	<style type="text/css">
+		#big-box {
+			width:500px;
+			height: 500px;
+
+			border:1px solid black;
+			background-color: black;
+			float: left;
+		}
+
+		#small-box {
+			width:50px;
+			height: 50px;
+
+			border:1px solid black;
+			background-color: red;
+			float: left;
+		}
+		h2{
+			color: white;
+		}
+	</style>
+
+</head>
+<body>
+<h1> Drop The Small Box In Big Box</h1>
+<div id="big-box">
+	<h2>Big Box</h2>
+</div>
+<div id="small-box">
+	Small Box
+</div>
+
+<script type="text/javascript">
+$( function() {
+    $( "#small-box" ).draggable();
+    $( "#big-box" ).droppable({
+      drop: function( event, ui ) {
+		alert("This is big box");
+     }
+    });
+  } );
+</script>
+
+</body>
+</html>

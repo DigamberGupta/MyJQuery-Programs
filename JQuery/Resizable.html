@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQueryUI Resizable</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+	<link href="jquery-ui-1.12.0/jquery-ui.css" rel="stylesheet">
+	<script src="jquery-ui-1.12.0/jquery-ui.js"></script>
+
+	<style type="text/css">
+
+		.margin {
+			margin: 10px;
+		}
+		#draggable {
+		 width: 170px; 
+		 height: 170px; 
+		 padding: 0.5em; 
+		 border:1px solid;
+		 float:left ;
+		}
+
+		 #draggable-verticle{
+		 width: 170px; 
+		 height: 170px; 
+		 padding: 0.5em;
+		  border:1px solid; 
+		  float: left;}
+
+		 #draggable-horizontal  {
+		 width: 150px; 
+		 height: 150px; 
+		 padding: 0.5em; 
+		 border:1px solid;
+		 float: left;}
+
+		 #container {
+		 	width: 300px;
+		 	height: 300px;
+		 	float: left;
+		 	border:1px solid;
+		 }
+
+		#draggable-in-container {
+			 border:1px solid;
+			 width: 100px;
+			 height: 100px;
+			 float: left;
+			 background-color:#8acff7;
+
+			}
+
+		#parent-container {
+			width: 600px;
+		 	height: 600px;
+		 	float: left;
+		 	border:1px solid;
+		}
+
+		#draggable-in-parent {
+			width: 100px;
+		 	height: 100px;
+		 	float: left;
+		 	border:1px solid;
+		}
+		#resizable-text {
+			color:#c42929;
+		}
+		.clear {
+			clear: both;
+
+		}
+		#resizable1{
+			position: relative;
+			top:-400px;
+			width: 100px;
+			height: 100px;
+			border:1px solid black;
+			background-color: red;
+		}
+		#resizable2{
+			position: relative;
+			top:-400px;
+			width: 100px;
+			height: 100px;
+			border:1px solid black;
+			background-color: yellow;
+		}
+	</style>
+</head>
+<body>
+<h1> Drag The Boxes </h1>
+<div id="draggable" class="margin">
+  <p>Drag me around</p>
+</div>
+
+<div id="draggable-verticle" class="margin">
+  <p>Drag me virtically </p>
+</div>
+
+<div id="draggable-horizontal" class="margin">
+  <p>Drag me Horizontal</p>
+</div>
+
+<div id="parent-container" class="margin">
+	<div id="container"  class="margin"><p id="resizable-text">This Is Resizable Container</p>
+
+		<div id="draggable-in-container" class="margin">
+	  	<p>Drag inside container</p>
+		</div>
+	</div>
+
+	<div id="draggable-in-parent" class="margin">
+		<p>Drag me with in the parent </p>
+	</div>
+</div>
+
+<div class="clear"> </div>
+<div id="resizable1" class="margin" >Red</div>
+<div id="resizable2" class="margin">Yellow</div>
+
+<script type="text/javascript">
+	
+	
+    $( "#draggable").draggable();
+
+    $( "#draggable-verticle").draggable({ axis: "y" });
+
+
+    $( "#draggable-horizontal").draggable({ axis: "x" });
+
+
+    $( "#draggable-in-container").draggable({ containment: "#container", scroll: false }).resizable({grid:50});
+
+    $("#draggable-in-parent").draggable({ containment: "parent" });
+
+    $("#container").resizable();
+
+     $( "#resizable1" ).resizable({
+      alsoResize: "#resizable2" ,
+       resize: function( event, ui ) {
+
+	       	if($("#resizable1").width() > 400){
+	       		       	
+		       	$("#resizable1").css("background-color","green");
+
+		       	$("#resizable2").css("background-color","orange");
+
+	       }
+       }
+    });
+    $( "#resizable2" ).resizable();
+
+
+</script>
+
+</body>
+</html>

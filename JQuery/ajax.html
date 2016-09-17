@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Ajax</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+	<style type="text/css">
+		body{
+		background-color: black;
+		}
+		#paragraph-text {
+			font-family: sans-serif;
+			color: red;
+		}
+
+	</style>
+
+</head>
+<body>
+	<center><p id="paragraph-text"> </p>
+	
+
+	<script type="text/javascript">
+
+		$.ajax("info.text").done(function(data){
+
+			$("#paragraph-text").html(data);
+
+		}).fail(function(){
+			$("#paragraph-text").html("Could not load the page");
+		})
+
+
+
+	</script>
+
+</body>
+</html>

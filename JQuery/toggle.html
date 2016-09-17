@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Fade Out</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+	<style type="text/css">
+		body{
+		background-color: black;
+		}
+		#toggle-text {
+			display: block;
+			color:yellow;
+		}
+
+		#toggle{
+		
+			border :0px;
+			width: 150px;
+			border-radius: 12px;
+			background-color: green;
+			outline: none;
+		} 
+
+	</style>
+
+</head>
+<body>
+	<center><p id="toggle-text"> click on the button below for text to FadeIn or FadeOut.</p>
+	<button id="toggle">Toggle</button></center>
+
+	<script type="text/javascript">
+
+		$("#toggle").click(function(){
+
+
+			if($("p").css("display")== "block"){
+
+				$("p").fadeOut();
+
+
+			}
+
+			 else {
+				$("p").fadeIn();
+
+
+			}
+
+		});
+
+
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Regular Expression</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+	<style type="text/css">
+		
+		body {
+			background-color: black;
+
+		}
+		div{
+			background-color: #62a1e5;
+			margin: 0 auto;
+			width: 600px;
+					}
+		button {
+			border-radius: 12px;
+			outline: none;
+			background-color: green;
+			border:0;
+		}
+		p{
+			color:black;
+			font-family: sans-serif;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+
+	<div id="div-text" >
+	<p id="text1">Here The Match Pattern will be display </p>
+
+	<input type="text" id="Text-input" placeholder="Enter text">
+	<input type="text" id="find-word" placeholder="Enter Search pattern ">
+
+	<button id="check-button"> check pattern</button>
+
+
+
+	</div>
+
+	<script type="text/javascript">
+		
+	$("#check-button").click(function (){
+
+
+
+		var textInputValue =$("#Text-input").val();
+		//alert(textInputValue);
+
+		var findWordValue =$("#find-word").val();
+		//alert(findWordValue);
+
+		//findWordValue=/findWordValue/i;
+
+		if(textInputValue =="bachi"){
+			$("p").html(textInputValue + " I Love You ");
+
+		}else if(textInputValue =="bacha"){
+			$("p").html(textInputValue + " Love's You");
+		}
+		else{
+
+		var result = textInputValue.match(new RegExp(findWordValue, "g"));
+
+		if(result != null){
+			$("p").html(result);	
+		}else{
+			$("p").html("Match not found");
+		}
+	}
+	
+	});
+
+
+	</script>
+
+
+
+</body>
+</html>

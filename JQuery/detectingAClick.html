@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JQuery</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+
+	<style type="text/css">
+		
+		.common {
+
+			width:100px;
+			height:100px ;
+			margin:10px;
+			float: left;
+
+		}
+		.square{
+			background-color:red; 
+		}
+
+		#circle{
+			background-color: yellow;
+			border-radius: 50%;
+		}
+		
+
+	</style>
+</head>
+<body>
+
+<h1> Click The circle and square to get the alert .. </h1>
+
+<div class="common " id="circle"> </div>
+
+<div class="common square" ></div>
+
+<div class="common square" > </div> 
+
+
+
+
+<script type="text/javascript"> 
+
+	$("h1").click(function(){
+		alert("This is a Hearder tag h1");
+	});
+
+
+	$("#circle").click(function(){
+
+		alert(" This is a circle ");
+
+	});
+
+	$(".square").click(function(){
+
+		alert(" This is a square ");
+
+	});
+
+
+
+	</script>
+
+</body>
+</html>

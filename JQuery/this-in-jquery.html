@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>This in jquery</title>
+	<script type="text/javascript" src="jquery-3.1.0.min.js"></script>
+	<style type="text/css">
+		#circle {
+			width:200px;
+			height:200px;
+			border-radius: 50%;
+			background-color: green;
+			float:left;
+		}
+		.square{
+			width:200px;
+			height:200px;
+			background-color: red;
+			margin: 10px;
+			float: left;
+		}
+	</style>
+</head>
+<body>
+<p> Click on the circle to know the width of the screen </p>
+<div id="circle" > </div>
+<div class="square" id=""> </div>
+<div class="square" > </div>
+
+<script type="text/javascript">
+
+		$("div").click(function(){
+			
+			if($(this).attr("id") == "circle"){
+
+				alert("This is an cirlce");
+			} else {
+				alert("This is an square");
+			}
+			
+		});
+
+
+
+
+</script>
+</body>
+</html>
